@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function giaihephuongtrinh() {
+            let a, b, c, d, e, f, D, Dx, Dy;
+            a = document.getElementById("a").value;
+            alert(a);
+            a = Number.parseInt(a);
+
+            b = document.getElementById("b").value;
+            alert(b);
+            b = Number.parseInt(b);
+
+            c = document.getElementById("c").value;
+            alert(c);
+            c = Number.parseInt(c);
+
+            d = document.getElementById("d").value;
+            alert(d);
+            d = Number.parseInt(d);
+
+            e = document.getElementById("e").value;
+            alert(e);
+            e = Number.parseInt(e);
+
+            f = document.getElementById("f").value;
+            alert(f);
+            f = Number.parseInt(f);
+
+            D = a * e - b * d;
+            Dx = c * e - b * f;
+            Dy = a * f - d * c;
+
+            if (D === 0)
+                if (Dx !== 0 || Dy !== 0)
+                    document.getElementById("result").innerHTML = "he phuong trinh vo nghiem";
+                else
+                        document.getElementById("result").innerHTML = "he phuong trinh vo so nghiem";
+
+                    else
+                        document.getElementById("result").innerHTML = "he phuong trinh co nghiem :<br> x=" + (Dx / D) + " <br> y=" + (Dy/D);
+        }
+    </script>
+</head>
+<body>
+<h3>Giai he phuong trinh</h3>
+<label><input type="text" id="a">x+ <input type="text" id="b">y= <input type="text" id="c"><br></label>
+<label><input type="text" id="d">x+ <input type="text" id="e">y= <input type="text" id="f"><br></label>
+<button onclick="giaihephuongtrinh()">Giai phuong trinh </button>
+<div id="result"></div>
+
+</body>
+</html>

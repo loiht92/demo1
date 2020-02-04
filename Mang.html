@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let studentofclass= Array();
+        function input() {
+            let name;
+            do {
+                name = prompt("nhap ten sinh vien. (nhap 'q ' de ket thuc");
+                alert(name);
+                if (name !==' q')
+                    studentofclass.push(name)
+
+            } while (name !== 'q' );
+        }
+
+        function show() {
+            document.write("So sinh vien :" +studentofclass.length +"<br>");
+            for (let name in studentofclass){
+                document.write(studentofclass[name] +"<br>");
+            }
+        }
+        input();
+        document.write("<br>truoc khi dao nguoc : <br>");
+
+        show();
+        document.write("<br>sau khi dao nguoc : <br>");
+        studentofclass=studentofclass.reverse();
+
+        show();
+        document.write("dao gia tri hai phan tu dau : <br>");
+        let tmp=studentofclass[0];
+        studentofclass[0]=studentofclass[1];
+        studentofclass[1]=tmp;
+
+        show();
+        document.write("Noi cac phan tu : <br>");
+        document.write(studentofclass.join("<br>"));
+
+        show();
+        document.write("xoa phan tu :<br>");//
+        studentofclass=studentofclass.pop();
+
+        show();
+        document.write("noi phan tu vao dau mang :<br>");
+        studentofclass=studentofclass.shift();
+
+        show();
+        document.write("xoa phan tu dau tien cua mang :<br>");
+        studentofclass=studentofclass.unshift();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
